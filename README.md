@@ -48,7 +48,7 @@ coverage. For that we'll include the flags `-ftest-coverage` and
 `-fprofile-arcs` to tell GCC to instrument the code.
 
 ```
-${CROSS-COMPILE}-gcc -qleon2 -c sample/bubble.c -ftest-coverage -fprofile-arcs
+${CROSS-COMPILE}-gcc -c sample/bubble.c -ftest-coverage -fprofile-arcs
 ```
 
 where `CROSS-COMPILE` is the prefix for your GCC cross compiler (in this case
