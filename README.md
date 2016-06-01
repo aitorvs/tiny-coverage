@@ -19,7 +19,7 @@ In the case of RTEMS, the `main` function is called `Init`. The wrapper method
 `__wrap_Init()` wraps that function to ensure `__gcov_exit()` is called when
 finished.
 
-```
+```c
 extern void __real_Init(void *ignored);
 
 #define real_function   __real_Init
@@ -43,7 +43,7 @@ void __wrap_Init(void *ignored)
 
 ##Profiling in 3 steps
 
-First, we need to compile the source files on which we want to perform the code
+**First**, we need to compile the source files on which we want to perform the code
 coverage. For that we'll include the flags `-ftest-coverage` and
 `-fprofile-arcs` to tell GCC to instrument the code.
 
@@ -54,14 +54,14 @@ ${CROSS-COMPILE}-gcc -qleon2 -c sample/bubble.c -ftest-coverage -fprofile-arcs
 where `CROSS-COMPILE` is the prefix for your GCC cross compiler (in this case
         would be spar-rtems-)
 
-Second, compile the rest of our project and wrap if necessary our application
+**Second**, compile the rest of our project and wrap if necessary our application
 entry point. In this case the `Init` function.
 
 ```
 ${CROSS-COMPILE}-gcc -g -o bubble bubble.o sample/wrapper.c  gcov/* -Xlinker --wrap -Xlinker Init -I./gcov
 ```
 
-Third, we can use GDB to connect to our embedded hardware and let it receive the
+**Third**, we can use GDB to connect to our embedded hardware and let it receive the
 coverage profile information.
 
 The following code is an example of a possible GDB script that could be used.
