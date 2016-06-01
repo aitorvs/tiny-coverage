@@ -31,10 +31,10 @@ void __wrap_Init(void *ignored)
     /*	call the real funcion	*/
     real_function(ignored);
 
-    /*  send out the coeverage info. after several seconds  */
+    // Send the gathered coverage info
     __gcov_exit();
 
-    /*  Delete the RTEMS init task  */
+    // These lines here bellow are not really important as are specific of RTEMS OS
     printf("rtems_task_delete\n");
     rtems_task_delete( RTEMS_SELF );
 
