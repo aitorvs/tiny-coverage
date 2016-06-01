@@ -10,8 +10,6 @@
 
 extern void __real_Init(void *ignored);
 
-//void __wrap_Init(void *ignored)
-
 #define real_function   __real_Init
 
 void __wrap_Init(void *ignored)
