@@ -7,8 +7,8 @@ commands 1
     set $filename = tmp->info->filename
     set $dataBegin = buffer
     set $dataEnd = buffer + sizeInBytes
-    eval "dump binary memory [0x%lx - 0x%lx] to %s", $dataBegin, $dataEnd, $filename 
-    eval "echo dump binary memory [0x%lx - 0x%lx] to %s", $dataBegin, $dataEnd, $filename 
+    eval "dump binary memory %s 0x%lx 0x%lx", $dataBegin, $dataEnd, $filename 
+    eval "echo dump binary memory %s 0x%lx 0x%lx", $dataBegin, $dataEnd, $filename 
     echo \n
     c
 end
