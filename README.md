@@ -92,5 +92,4 @@ application
 gdb -x gdb/automate_coverage.gdb bubble
 ```
 
-You should have received .gcda files with the information about the code
-coverage that you can now process with [lcov](http://ltp.sourceforge.net/coverage/lcov.php) at will.
+The corresponding `.gcda` files with the information about the code coverage should have been created. You can now process them using [lcov](http://ltp.sourceforge.net/coverage/lcov.php) at will.
