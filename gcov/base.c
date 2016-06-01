@@ -3,18 +3,6 @@
  * "kernel/gcov"). It basically uses the convert_to_gcda function to generate
  * the .gcda files information upon application completion, and dump it on the
  * host filesystem via GDB scripting.
- *
- * Original Linux banner follows below - but note that the Linux guys have
- * nothing to do with these modifications, so blame me (and contact me)
- * if something goes wrong.
- *
- * Thanassis Tsiodras
- * Real-time Embedded Software Engineer 
- * System, Software and Technology Department
- * European Space Agency
- *
- * e-mail: ttsiodras@gmail.com / Thanassis.Tsiodras@esa.int (work)
- *
  */
 
 
