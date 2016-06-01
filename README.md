@@ -5,7 +5,7 @@ embedded systems.
 #Directory structure
 
 - `gcov`: code coverage library
-- `sample/rtems`: sample code for RTEMS operating system
+- `sample/rtems`: sample code for [RTEMS](http://www.rtems.com/) operating system
 - `gdb`: gdb script to automate the code coverage counters retrieval
 
 #Usage
@@ -15,7 +15,7 @@ files. One file `bubble.c` that is the software we want to profile and, a
 `wrapper.c` that wraps the main function to ensure the code coverage counters
 are transmitted back to the host.
 
-In the case of RTEMS, the `main` function is called `Init`. The wrapper method
+In the case of [RTEMS](http://www.rtems.com/), the `main` function is called `Init`. The wrapper method
 `__wrap_Init()` wraps that function to ensure `__gcov_exit()` is called when
 finished.
 
@@ -93,4 +93,4 @@ gdb -x gdb/automate_coverage.gdb bubble
 ```
 
 You should have received .gcda files with the information about the code
-coverage that you can now process with `lcov` at will.
+coverage that you can now process with [lcov](http://ltp.sourceforge.net/coverage/lcov.php) at will.
